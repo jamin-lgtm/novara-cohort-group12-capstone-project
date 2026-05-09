@@ -1,5 +1,7 @@
 import Hero from './components/Hero'
 
+import Footer from "./components/Footer";
+
 
 function App() {
   
@@ -7,7 +9,9 @@ function App() {
   return (
     <>
       <Hero />
-      {/* Other components */}
+     <div>
+      <Footer />
+    </div>
     </>
   )
 }
