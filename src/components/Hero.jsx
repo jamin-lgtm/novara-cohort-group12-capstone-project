@@ -1,4 +1,5 @@
 import './Hero.css';
+import heroImage from '../assets/images/earth-image.png';
 
 function Hero(){
     const scrollToGallery = ()=>{
@@ -48,7 +49,7 @@ function Hero(){
                     {/* Right: Earth  image */}
                     <div className='hero-visual'>
                         <img
-                            src="https://lh3.googleusercontent.com/d/14s0YqS45GminQaJqe9SV6o_6FQvIk9WD"
+                            src={heroImage}
                             alt="Earth from space"
                             className="earth-image"
                         />
