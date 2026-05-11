@@ -36,30 +36,51 @@ function PlanetGallery() {
     <section
       id="planet-gallery"
       style={{
-        padding: "40px",
-        backgroundColor: "#000",
-        color: "white",
+        padding: "70px 40px",
+        backgroundColor: "#f4f8ff",
         textAlign: "center",
       }}
     >
-      <h2 style={{ marginBottom: "30px" }}>
-        Planet Gallery
+      <h2
+        style={{
+          fontSize: "36px",
+          fontWeight: "700",
+          color: "#1f4fa3",
+          marginBottom: "15px",
+        }}
+      >
+        Visualizing the Differences Between Planets
       </h2>
+
+      <p
+        style={{
+          maxWidth: "700px",
+          margin: "0 auto 40px",
+          color: "#555",
+          fontSize: "15px",
+          lineHeight: "1.7",
+        }}
+      >
+        Each planet in our solar system has unique physical characteristics.
+        Visual comparisons help highlight how vastly different terrestrial
+        planets are from gas giants and ice giants.
+      </p>
 
       <div
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-          gap: "20px",
+          gap: "25px",
         }}
       >
         {planets.map((planet, index) => (
           <figure
             key={index}
             style={{
-              background: "#111",
-              padding: "20px",
-              borderRadius: "15px",
+              backgroundColor: "#ffffff",
+              borderRadius: "18px",
+              padding: "15px",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
             }}
           >
             <img
@@ -69,14 +90,26 @@ function PlanetGallery() {
                 width: "100%",
                 height: "250px",
                 objectFit: "cover",
-                borderRadius: "10px",
+                borderRadius: "12px",
               }}
             />
 
             <figcaption style={{ marginTop: "15px" }}>
-              <h3>{planet.planet}</h3>
+              <h3
+                style={{
+                  color: "#1f4fa3",
+                  marginBottom: "10px",
+                }}
+              >
+                {planet.planet}
+              </h3>
 
-              <p>
+              <p
+                style={{
+                  color: "#444",
+                  fontSize: "14px",
+                }}
+              >
                 Distance from Sun: {planet.distanceFromSun} million km
               </p>
             </figcaption>
