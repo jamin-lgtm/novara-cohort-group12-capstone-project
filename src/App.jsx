@@ -1,17 +1,14 @@
 import Hero from './components/Hero'
-
+import InfoVideo from "./components/InfoVideo";
 import Footer from "./components/Footer";
 
 
 function App() {
-  
-
   return (
     <>
       <Hero />
-     <div>
+      <InfoVideo />
       <Footer />
-    </div>
     </>
   )
 }
