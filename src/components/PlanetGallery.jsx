@@ -1,85 +1,86 @@
-import space1 from "../assets/images/space 1.jpg";
-import space2 from "../assets/images/space 2.jpg";
-import space3 from "../assets/images/space 3.jpg";
-import space4 from "../assets/images/space 4.jpg";
-import space5 from "../assets/images/space 5.jpg";
-import space6 from "../assets/images/space 6.jpg";
-import space7 from "../assets/images/space 7.jpg";
-import space8 from "../assets/images/space 8.jpg";
+import { useEffect, useState } from "react";
+
+import mercury from "../assets/images/mecury.jpg";
+import venus from "../assets/images/venus.jpg";
+import earth from "../assets/images/earth.jpg";
+import mars from "../assets/images/mars.jpg";
+import jupiter from "../assets/images/jupiter.jpg";
+import saturn from "../assets/images/saturn.jpg";
+import uranus from "../assets/images/uranus.jpg";
+import neptune from "../assets/images/neptune.jpg";
+import pluto from "../assets/images/pluto.jpg";
 
 function PlanetGallery() {
-  const planets = [
-    space1,
-    space2,
-    space3,
-    space4,
-    space5,
-    space6,
-    space7,
-    space8,
-  ];
+  const [planets, setPlanets] = useState([]);
+
+  const planetImages = {
+    Mercury: mercury,
+    Venus: venus,
+    Earth: earth,
+    Mars: mars,
+    Jupiter: jupiter,
+    Saturn: saturn,
+    Uranus: uranus,
+    Neptune: neptune,
+    Pluto: pluto,
+  };
+
+  useEffect(() => {
+    fetch("https://anurella.github.io/json/planets.json")
+      .then((response) => response.json())
+      .then((data) => setPlanets(data))
+      .catch((error) => console.log(error));
+  }, []);
 
   return (
     <section
+      id="planet-gallery"
       style={{
-        padding: "60px 20px",
-        backgroundColor: "#ffffff",
+        padding: "40px",
+        backgroundColor: "#000",
+        color: "white",
         textAlign: "center",
       }}
     >
-      <h2
-        style={{
-          fontSize: "42px",
-          marginBottom: "15px",
-          color: "#222",
-        }}
-      >
-        Visualizing the Differences Between Planets
+      <h2 style={{ marginBottom: "30px" }}>
+        Planet Gallery
       </h2>
-
-      <p
-        style={{
-          fontSize: "18px",
-          color: "#555",
-          maxWidth: "750px",
-          margin: "0 auto 45px",
-          lineHeight: "1.6",
-        }}
-      >
-        Each planet in our solar system has unique characteristics that help us
-        understand space better.
-      </p>
 
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          gap: "28px",
-          maxWidth: "1200px",
-          margin: "0 auto",
+          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+          gap: "20px",
         }}
       >
         {planets.map((planet, index) => (
-          <div
+          <figure
             key={index}
             style={{
-              borderRadius: "18px",
-              overflow: "hidden",
-              boxShadow: "0 4px 18px rgba(0,0,0,0.18)",
-              backgroundColor: "#ffffff",
+              background: "#111",
+              padding: "20px",
+              borderRadius: "15px",
             }}
           >
             <img
-              src={planet}
-              alt={`space ${index + 1}`}
+              src={planetImages[planet.planet]}
+              alt={planet.planet}
               style={{
                 width: "100%",
-                height: "230px",
+                height: "250px",
                 objectFit: "cover",
-                display: "block",
+                borderRadius: "10px",
               }}
             />
-          </div>
+
+            <figcaption style={{ marginTop: "15px" }}>
+              <h3>{planet.planet}</h3>
+
+              <p>
+                Distance from Sun: {planet.distanceFromSun} million km
+              </p>
+            </figcaption>
+          </figure>
         ))}
       </div>
     </section>
