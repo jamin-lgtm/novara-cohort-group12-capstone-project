@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import "../App.css";
-=======
-import "./Footer.css";
->>>>>>> 098c966 (Updated footer styling and responsive design)
+import "../Footer.css";
 
 function Footer() {
   return (
