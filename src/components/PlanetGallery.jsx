@@ -28,7 +28,9 @@ function PlanetGallery() {
   useEffect(() => {
     fetch("https://anurella.github.io/json/planets.json")
       .then((response) => response.json())
-      .then((data) => setPlanets(data))
+      .then((data) => {
+        setPlanets(data);
+      })
       .catch((error) => console.log(error));
   }, []);
 
@@ -36,17 +38,17 @@ function PlanetGallery() {
     <section
       id="planet-gallery"
       style={{
-        padding: "70px 40px",
-        backgroundColor: "#f4f8ff",
+        padding: "80px 20px",
+        backgroundColor: "#f5f5f5",
         textAlign: "center",
       }}
     >
       <h2
         style={{
-          fontSize: "36px",
+          color: "#1e4fa3",
+          fontSize: "40px",
           fontWeight: "700",
-          color: "#1f4fa3",
-          marginBottom: "15px",
+          marginBottom: "20px",
         }}
       >
         Visualizing the Differences Between Planets
@@ -54,10 +56,10 @@ function PlanetGallery() {
 
       <p
         style={{
-          maxWidth: "700px",
-          margin: "0 auto 40px",
           color: "#555",
-          fontSize: "15px",
+          maxWidth: "900px",
+          margin: "0 auto 50px",
+          fontSize: "18px",
           lineHeight: "1.7",
         }}
       >
@@ -77,10 +79,11 @@ function PlanetGallery() {
           <figure
             key={index}
             style={{
-              backgroundColor: "#ffffff",
-              borderRadius: "18px",
-              padding: "15px",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+              background: "#fff",
+              borderRadius: "20px",
+              overflow: "hidden",
+              boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+              paddingBottom: "20px",
             }}
           >
             <img
@@ -90,15 +93,15 @@ function PlanetGallery() {
                 width: "100%",
                 height: "250px",
                 objectFit: "cover",
-                borderRadius: "12px",
               }}
             />
 
-            <figcaption style={{ marginTop: "15px" }}>
+            <figcaption style={{ padding: "15px" }}>
               <h3
                 style={{
-                  color: "#1f4fa3",
+                  color: "#1e4fa3",
                   marginBottom: "10px",
+                  fontSize: "24px",
                 }}
               >
                 {planet.planet}
@@ -106,8 +109,8 @@ function PlanetGallery() {
 
               <p
                 style={{
-                  color: "#444",
-                  fontSize: "14px",
+                  color: "#666",
+                  fontSize: "16px",
                 }}
               >
                 Distance from Sun: {planet.distanceFromSun} million km
