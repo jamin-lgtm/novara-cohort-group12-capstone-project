@@ -14,13 +14,18 @@ function PlanetGallery() {
           let ext;
 
           if (name === "earth") ext = "jpg";
+
+          else if (name === "neptune") {
+            planet.image =
+              "https://placehold.co/400x250?text=Neptune+Image+Missing";
+            return planet;
+          }
+
           else if (name === "mercury") ext = "webp";
+
           else ext = "webp";
 
           planet.image = `https://anurella.github.io/images/planets/${name}.${ext}`;
-          if (name === "neptune") {
-            planet.image = "https://placehold.co/400x250?text=Neptune+Image+Missing";
-          }
 
           return planet;
         });

@@ -1,41 +1,48 @@
 .planet-gallery {
-  background-color: #f5f7fb;
   padding: 80px 40px;
+  background: #f4f8ff;
   text-align: center;
 }
 
 .gallery-title {
-  font-size: 52px;
-  font-weight: 700;
-  color: #2d2f83;
+  font-size: 2.5rem;
+  color: #2d3ea8;
   margin-bottom: 20px;
+  font-weight: 700;
 }
 
 .gallery-description {
-  max-width: 900px;
+  max-width: 700px;
   margin: 0 auto 50px;
-  font-size: 22px;
-  line-height: 1.8;
-  color: #555;
+  color: #666;
+  line-height: 1.7;
+  font-size: 1rem;
 }
 
 .planet-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
+  justify-content: center;
 }
 
 .planet-card {
-  background-color: white;
-  border-radius: 20px;
+  background: white;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.planet-card:hover {
+  transform: translateY(-5px);
 }
 
 .planet-image {
   width: 100%;
-  height: 250px;
+  height: 220px;
   object-fit: cover;
+  display: block;
 }
 
 .planet-content {
@@ -43,13 +50,57 @@
 }
 
 .planet-name {
-  font-size: 34px;
-  color: #4a4bb7;
-  margin-bottom: 15px;
+  font-size: 1.8rem;
+  color: #5a56d6;
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
 .planet-distance {
-  font-size: 18px;
-  color: #555;
+  color: #666;
   line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .planet-gallery {
+    padding: 60px 20px;
+  }
+
+  .gallery-title {
+    font-size: 2rem;
+  }
+
+  .gallery-description {
+    font-size: 0.95rem;
+    margin-bottom: 35px;
+  }
+
+  .planet-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .planet-image {
+    height: 150px;
+  }
+
+  .planet-name {
+    font-size: 1.3rem;
+  }
+
+  .planet-distance {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .planet-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-title {
+    font-size: 1.7rem;
+  }
 }
