@@ -11,8 +11,8 @@ function PlanetGallery() {
       .catch((error) => console.log(error));
   }, []);
 
-  const getImageUrl = (imagePath) => {
-  return `https://anurella.github.io/${imagePath.replace("../", "")}`;
+ const getImageUrl = (imagePath) => {
+  return new URL(imagePath, "https://anurella.github.io/json/planets.json").href;
 };
 
   return (
@@ -31,9 +31,7 @@ function PlanetGallery() {
         {planets.map((planet, index) => (
           <figure className="planet-card" key={index}>
             <img
-              src={`https://anurella.github.io/images/${planet.image
-                .split("/")
-                .pop()}`}
+              src={getImageUrl(planet.image)}
               alt={planet.planet}
               className="planet-image"
             />
