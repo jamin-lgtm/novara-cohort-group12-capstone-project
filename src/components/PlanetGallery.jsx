@@ -64,7 +64,7 @@ function PlanetGallery() {
             }}
           >
             <img
-              src={planet.image}
+              src={`https://anurella.github.io/${planet.image.replace("../", "")}`}
               alt={planet.planet}
               style={{
                 width: "100%",
