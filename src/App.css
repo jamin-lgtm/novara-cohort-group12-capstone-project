@@ -1,5 +1,7 @@
+<<<<<<< HEAD
 .footerdiv {
   padding: 30px 20px;
+  /* background-color: #051540; */
 }
 
 .footer-bottom {
@@ -22,3 +24,5 @@
   display: inline;
   white-space: nowrap;
 }
+=======
+>>>>>>> 098c966 (Updated footer styling and responsive design)

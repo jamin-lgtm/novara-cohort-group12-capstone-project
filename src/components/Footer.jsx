@@ -1,4 +1,7 @@
-import "../App.css";
+
+=======
+import "../Footer.css";
+>>>>>>> 1555ffb0ff45749a6b57ca3826e781e0ecc5ab08
 
 function Footer() {
   return (
