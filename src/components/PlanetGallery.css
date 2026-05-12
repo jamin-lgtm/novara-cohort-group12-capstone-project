@@ -1,0 +1,55 @@
+.planet-gallery {
+  background-color: #f5f7fb;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.gallery-title {
+  font-size: 52px;
+  font-weight: 700;
+  color: #2d2f83;
+  margin-bottom: 20px;
+}
+
+.gallery-description {
+  max-width: 900px;
+  margin: 0 auto 50px;
+  font-size: 22px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.planet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.planet-card {
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.planet-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.planet-content {
+  padding: 20px;
+}
+
+.planet-name {
+  font-size: 34px;
+  color: #4a4bb7;
+  margin-bottom: 15px;
+}
+
+.planet-distance {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+}
