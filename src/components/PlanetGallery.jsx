@@ -7,13 +7,28 @@ function PlanetGallery() {
   useEffect(() => {
     fetch("https://anurella.github.io/json/planets.json")
       .then((response) => response.json())
-      .then((data) => setPlanets(data))
+      .then((planets) => {
+        const fixedPlanets = planets.map((planet) => {
+          const name = planet.planet.toLowerCase();
+
+          let ext;
+
+          if (name === "earth") ext = "jpg";
+          else if (name === "mercury") ext = "webp";
+          else ext = "webp";
+
+          planet.image = `https://anurella.github.io/images/planets/${name}.${ext}`;
+          if (name === "neptune") {
+            planet.image = "https://placehold.co/400x250?text=Neptune+Image+Missing";
+          }
+
+          return planet;
+        });
+
+        setPlanets(fixedPlanets);
+      })
       .catch((error) => console.log(error));
   }, []);
-
- const getImageUrl = (imagePath) => {
-  return new URL(imagePath, "https://anurella.github.io/json/planets.json").href;
-};
 
   return (
     <section className="planet-gallery" id="planet-gallery">
@@ -31,7 +46,7 @@ function PlanetGallery() {
         {planets.map((planet, index) => (
           <figure className="planet-card" key={index}>
             <img
-              src={getImageUrl(planet.image)}
+              src={planet.image}
               alt={planet.planet}
               className="planet-image"
             />
