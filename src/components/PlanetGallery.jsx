@@ -1,36 +1,12 @@
 import { useEffect, useState } from "react";
 
-import mercury from "../assets/images/mecury.jpg";
-import venus from "../assets/images/venus.jpg";
-import earth from "../assets/images/earth.jpg";
-import mars from "../assets/images/mars.jpg";
-import jupiter from "../assets/images/jupiter.jpg";
-import saturn from "../assets/images/saturn.jpg";
-import uranus from "../assets/images/uranus.jpg";
-import neptune from "../assets/images/neptune.jpg";
-import pluto from "../assets/images/pluto.jpg";
-
 function PlanetGallery() {
   const [planets, setPlanets] = useState([]);
-
-  const planetImages = {
-    Mercury: mercury,
-    Venus: venus,
-    Earth: earth,
-    Mars: mars,
-    Jupiter: jupiter,
-    Saturn: saturn,
-    Uranus: uranus,
-    Neptune: neptune,
-    Pluto: pluto,
-  };
 
   useEffect(() => {
     fetch("https://anurella.github.io/json/planets.json")
       .then((response) => response.json())
-      .then((data) => {
-        setPlanets(data);
-      })
+      .then((data) => setPlanets(data))
       .catch((error) => console.log(error));
   }, []);
 
@@ -45,9 +21,9 @@ function PlanetGallery() {
     >
       <h2
         style={{
-          color: "#1e4fa3",
-          fontSize: "40px",
+          fontSize: "42px",
           fontWeight: "700",
+          color: "#0b3d91",
           marginBottom: "20px",
         }}
       >
@@ -56,11 +32,11 @@ function PlanetGallery() {
 
       <p
         style={{
-          color: "#555",
           maxWidth: "900px",
-          margin: "0 auto 50px",
+          margin: "0 auto 50px auto",
           fontSize: "18px",
-          lineHeight: "1.7",
+          lineHeight: "1.8",
+          color: "#555",
         }}
       >
         Each planet in our solar system has unique physical characteristics.
@@ -73,21 +49,22 @@ function PlanetGallery() {
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
           gap: "25px",
+          maxWidth: "1200px",
+          margin: "0 auto",
         }}
       >
         {planets.map((planet, index) => (
           <figure
             key={index}
             style={{
-              background: "#fff",
+              backgroundColor: "#ffffff",
               borderRadius: "20px",
               overflow: "hidden",
-              boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
-              paddingBottom: "20px",
+              boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
             }}
           >
             <img
-              src={planetImages[planet.planet]}
+              src={planet.image}
               alt={planet.planet}
               style={{
                 width: "100%",
@@ -96,12 +73,16 @@ function PlanetGallery() {
               }}
             />
 
-            <figcaption style={{ padding: "15px" }}>
+            <figcaption
+              style={{
+                padding: "20px",
+              }}
+            >
               <h3
                 style={{
-                  color: "#1e4fa3",
-                  marginBottom: "10px",
                   fontSize: "24px",
+                  color: "#0b3d91",
+                  marginBottom: "10px",
                 }}
               >
                 {planet.planet}
@@ -109,8 +90,8 @@ function PlanetGallery() {
 
               <p
                 style={{
-                  color: "#666",
                   fontSize: "16px",
+                  color: "#555",
                 }}
               >
                 Distance from Sun: {planet.distanceFromSun} million km
