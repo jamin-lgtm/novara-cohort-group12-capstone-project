@@ -11,6 +11,10 @@ function PlanetGallery() {
       .catch((error) => console.log(error));
   }, []);
 
+  const getImageUrl = (imagePath) => {
+  return `https://anurella.github.io/${imagePath.replace("../", "")}`;
+};
+
   return (
     <section className="planet-gallery" id="planet-gallery">
       <h2 className="gallery-title">
