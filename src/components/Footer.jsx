@@ -7,8 +7,11 @@ function Footer() {
         <h5>About</h5>
 
         <p className="aboutgraph">
-          We are Aniebiet, Samuel, Eagle and teammates from TS Academy, passionate
-          about building clean, consistent, and responsive web applications.
+          We are Novara Chohort Group 12 — a dynamic team of innovators from TS Academy made up of
+          Aniebiet, Samuel, Samuel, Moses, Amaka, and Ifeoma. United by curiosity and a passion
+          for technology, we combine creativity, problem-solving, and teamwork to build
+          clean, responsive, and user-focused web applications that turn ideas into
+          impactful digital experiences.
         </p>
 
         <div className="footer-links">
