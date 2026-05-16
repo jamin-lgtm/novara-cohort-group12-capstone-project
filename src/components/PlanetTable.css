@@ -13,35 +13,87 @@
 
 /* Title */
 .planet-table-title {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #111827;
+  font-family: inter;
+  font-style: semi-bold;
+  font-size: 32px;
+  font-weight: 600;
+  color:#164BAF;
+  line-height: 150%;
+  letter-spacing: -2%;
+  vertical-align: middle;
   margin-bottom: 0.5rem;
 }
 
 /* Subtitle */
 .planet-table-subtitle {
-  font-size: 0.9rem;
-  color: #6b7280;
+  font-family: inter;
+  font-weight: 400;
+  font-style: regular;
+  font-size: 18px;
+  color: #0F2A44;
   margin-bottom: 1.8rem;
+  letter-spacing: 0%;
+  line-height: 150%;
+  vertical-align: middle;
+
+}
+
+/* Table Description */
+.planet-table-description {
+  font-family: inter;
+  font-size: 18px;
+  font-style: semi-bold;
+  font-weight: 600;
+  color: #0F2A44;
+  margin-bottom: 20px;
+  letter-spacing: -2%;
+  line-height: 150%;
+  vertical-align: middle;
 }
 
 /* Table */
 .planet-table {
   width: 100%;
   border-collapse: collapse;
+  background: #F2F7FF;
+  border-radius: 16px;
+
+
 }
 
 /* Header */
+
+#planet-table-first-header th {
+  background: #051540;
+  border-bottom: 2px solid #e5e7eb;
+  color: white;
+  
+}
+
+thead th:first-child {
+  border-top-left-radius: 16px;
+}
+thead th:last-child {
+  border-top-right-radius: 16px;
+}
+
+tbody tr:last-child th:first-child {
+  border-bottom-left-radius: 16px;
+}
+tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 16px;
+}
+
 .planet-table th {
-  background: #f3f4f6;
-  color: #374151;
+  background: white;
+  color: black;
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
-  padding: 0.9rem 1.2rem;
+  padding: 12px;
   text-align: left;
   border-bottom: 1px solid #e5e7eb;
+  border: 1px solid #ffffff !important;
 }
 
 /* Cells */
@@ -50,7 +102,10 @@
   font-size: 0.9rem;
   color: #4b5563;
   border-bottom: 1px solid #f1f5f9;
+  border: 1px solid #ffffff;
 }
+
+
 
 /* Hover effect */
 .planet-table tbody tr:hover {
@@ -59,7 +114,37 @@
 }
 
 /* Category column */
-.category {
+tbody .category, tbody .subcategory {
   font-weight: 600;
   color: #111827;
+  background: #D1E3FF;
+}
+
+
+
+
+/* Media query */
+@media (max-width: 768px) {
+  .planet-table-section {
+    padding: 1rem;
+  }
+
+  .planet-table-title {
+    font-size: 1.4rem;
+  }
+
+  .planet-table-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .planet-table th, .planet-table td {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .planet-table-container {
+    display: none;
+  }
 }

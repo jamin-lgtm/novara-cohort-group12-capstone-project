@@ -3,7 +3,8 @@
    Assigned: Samuel .O (Developer)
    ======================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* ── Reset & Section ── */
 * {
@@ -19,6 +20,8 @@
   background: white;
   border: 1px solid rgba(56, 189, 248, 0.1);
   border-radius: 20px;
+  font-family: inter, sans-serif;
+  font-weight: 400;
 }
 
 /* Top glowing line */
@@ -69,7 +72,6 @@
 
 /* ── Header ── */
 .contact__eyebrow {
-  font-family: 'Space Mono', monospace;
   font-size: 0.65rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -98,7 +100,7 @@
 }
 
 .contact__title {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   font-weight: 700;
   color: #0b3db9;
@@ -108,7 +110,7 @@
 }
 
 .contact__subtitle {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   color: #202122;
   margin-bottom: 3rem;
@@ -140,7 +142,7 @@
 
 /* ── Labels ── */
 .contact__field label {
-  font-family: 'Space Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 0.65rem;
   font-weight: 700;
   color: #000307;
@@ -157,7 +159,7 @@
   border-radius: 10px;
   padding: 0.85rem 1.1rem;
   color: #e2e8f0;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.92rem;
   font-weight: 400;
   outline: none;
@@ -175,8 +177,8 @@
 .contact__field input:focus,
 .contact__field select:focus,
 .contact__field textarea:focus {
-  border-color: rgba(56, 189, 248, 0.4);
-  background: #0d1929;
+  border-color: rgba(136, 143, 146, 0.4);
+  background: #d1d4da;
   box-shadow:
     0 0 0 3px rgba(56, 189, 248, 0.06),
     0 0 20px rgba(56, 189, 248, 0.04);
@@ -200,8 +202,13 @@
 }
 
 .contact__field select option {
-  background: #5081f3;
+  background:#9ca5bb;
   color: #e2e8f0;
+}
+
+.contact__field select option:hover {
+  background:red;
+  color: #f1f5f9;
 }
 
 .contact__field textarea {
@@ -221,7 +228,7 @@
 
 /* ── Error messages ── */
 .contact__error {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
   color: #f87171;
   display: flex;
@@ -258,7 +265,7 @@
 }
 
 .contact__group-label {
-  font-family: 'Space Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: 0.62rem;
   font-weight: 700;
   color: #040405;
@@ -283,7 +290,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.85rem;
   color: #cbd5e1;
   cursor: pointer;
@@ -326,7 +333,7 @@
   border: none;
   border-radius: 10px;
   padding: 0.9rem 2.75rem;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
@@ -376,7 +383,7 @@
 .contact__success {
   text-align: center;
   padding: 4rem 2rem;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.1rem;
   color: #4ade80;
   border: 1px solid rgba(74, 222, 128, 0.15);
