@@ -1,23 +1,19 @@
-import Hero from './components/Hero'
-
+import Hero from "./components/Hero";
+import InfoVideo from "./components/InfoVideo";
+import PlanetGallery from "./components/PlanetGallery";
 import TableContact from "./components/TableContact";
-
 import Footer from "./components/Footer";
 
 function App() {
-  
-
   return (
     <>
       <Hero />
-      <div>
-        <TableContact />
-      </div>
-      <div>
-       <Footer />
-      </div>
+      <InfoVideo />
+      <PlanetGallery />
+      <TableContact />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
