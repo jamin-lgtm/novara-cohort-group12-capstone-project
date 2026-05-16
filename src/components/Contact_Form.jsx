@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './TableContact.css';
+import './Contact_Form.css';
 import SpaceBackground from './SpaceBackground';
 
 const ContactForm = () => {
