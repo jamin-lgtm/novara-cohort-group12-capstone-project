@@ -28,74 +28,79 @@ const planetDetails = {
   Mercury: {
     category: "Terrestrial Planets",
     mass: "0.330",
-    diameter: "4,879",
+    diameter: "4,878",
     density: "5427",
     gravity: "3.7",
-    discovered: "Known since antiquity",
+    //discovered: "Known since antiquity",
   },
   Venus: {
-    category: "Terrestrial Planets",
-    mass: "4.87",
-    diameter: "12,104",
-    density: "5243",
-    gravity: "8.9",
-    discovered: "Known since antiquity",
+    //category: "Terrestrial Planets",
+    mass: "0.330",
+    diameter: "4,878",
+    density: "5427",
+    gravity: "3.7",
+    //discovered: "Known since antiquity",
   },
   Earth: {
-    category: "Terrestrial Planets",
-    mass: "5.97",
-    diameter: "12,756",
-    density: "5514",
-    gravity: "9.8",
-    discovered: "—",
+    //category: "Terrestrial Planets",
+    mass: "0.330",
+    diameter: "4,878",
+    density: "5427",
+    gravity: "3.7",
+    //discovered: "—",
   },
   Mars: {
-    category: "Terrestrial Planets",
-    mass: "0.642",
-    diameter: "6,792",
-    density: "3933",
+    //category: "Terrestrial Planets",
+    mass: "0.330",
+    diameter: "4,878",
+    density: "5427",
     gravity: "3.7",
-    discovered: "Known since antiquity",
+    //discovered: "Known since antiquity",
   },
   Jupiter: {
-    category: "Gas Giants",
-    mass: "1898",
-    diameter: "142,984",
-    density: "1326",
-    gravity: "23.1",
-    discovered: "Known since antiquity",
+    category: "Jovian Planets",
+    subcategory: "Gas Giants",
+    mass: "0.330",
+    diameter: "4,878",
+    density: "5427",
+    gravity: "3.7",
+    //discovered: "Known since antiquity",
   },
   Saturn: {
-    category: "Gas Giants",
-    mass: "568",
-    diameter: "120,536",
-    density: "687",
-    gravity: "9.0",
-    discovered: "Known since antiquity",
+    //category: "Jovian Planets",
+    //subcategory: "Gas Giants",
+    mass: "0.330",
+    diameter: "4,878",
+    density: "5427",
+    gravity: "3.7",
+    //discovered: "Known since antiquity",
   },
   Uranus: {
-    category: "Ice Giants",
-    mass: "86.8",
-    diameter: "51,118",
-    density: "1271",
-    gravity: "8.7",
-    discovered: "1781 (William Herschel)",
+    //category: "Jovian Planets",
+    subcategory: "Ice Giants",
+    mass: "0.330",
+    diameter: "4,878",
+    density: "5427",
+    gravity: "3.7",
+    //discovered: "1781 (William Herschel)",
   },
   Neptune: {
-    category: "Ice Giants",
-    mass: "102",
-    diameter: "49,528",
-    density: "1638",
-    gravity: "11.0",
-    discovered: "1846 (Galle & d’Arrest)",
+    //category: "Jovian Planets",
+    //subcategory: "Ice Giants",
+    mass: "0.330",
+    diameter: "4,878",
+    density: "5427",
+    gravity: "3.7",
+    //discovered: "1846 (Galle & d’Arrest)",
   },
   Pluto: {
     category: "Dwarf Planets",
-    mass: "0.0146",
-    diameter: "2,377",
-    density: "1850",
-    gravity: "0.7",
-    discovered: "1930 (Clyde Tombaugh)",
+    subcategory: "Dwarf Planets",
+    mass: "0.330",
+    diameter: "4,878",
+    density: "5427",
+    gravity: "3.7",
+    //discovered: "1930 (Clyde Tombaugh)",
   },
 };
 
@@ -130,55 +135,87 @@ const planetDetails = {
   }
 
   return (
-    <>
+    <div className="planet-table-container">
 
       {/* Planetary Facts Table */}
       <section className="planet-table-section">
 
-    <h2 className="planet-table-title">
-      Planetary Facts at a Glance
-    </h2>
+        <h2 className="planet-table-title">
+          Planetary Facts at a Glance
+        </h2>
 
-    <p className="planet-table-subtitle">
-      Compare planetary properties across our solar system.
-    </p>
+        <p className="planet-table-subtitle">
+          Below is a comparative table of major planets in our solar system. 
+          The data highlights key physical properties used by astronomers and researchers worldwide.
+        </p>
+        <p className="planet-table-description">
+          Data about the planets of our solar system (Planetary facts taken from NASA)
+        </p>
 
-    <table className="planet-table">
-      <thead>
-        <tr>
-          <th>Category</th>
-          <th>Name</th>
-          <th>Mass</th>
-          <th>Diameter</th>
-          <th>Density</th>
-          <th>Gravity</th>
-          <th>Discovered</th>
-        </tr>
-      </thead>
-
-      {/* ✅ ONLY THIS PART CHANGED */}
-      <tbody>
-        {planets.map((planet) => {
-          const details = planetDetails[planet.planet];
-
-          return (
-            <tr key={planet.planet}>
-              <td className="category">{details?.category}</td>
-              <td>{planet.planet}</td>
-              <td>{details?.mass}</td>
-              <td>{details?.diameter}</td>
-              <td>{details?.density}</td>
-              <td>{details?.gravity}</td>
-              <td>{details?.discovered}</td>
+        <table className="planet-table">
+          <thead id="planet-table-first-header">
+            <tr>
+              <th scope="col" colSpan={2}></th>
+              <th scope="col">Name</th>
+              <th scope="col">Mass (10²⁴kg)</th>
+              <th scope="col">Diameter (km)</th>
+              <th scope="col">Density (kg/m³)</th>
+              <th scope="col">Gravity (m/s²)</th>
+              {/* <th scope="col">Discovered</th> */}
             </tr>
-          );
-        })}
-      </tbody>
+          </thead>
 
-    </table>
+          {/* ✅ ONLY THIS PART CHANGED */}
+          <tbody>
+            {planets.map((planet) => {
+              const details = planetDetails[planet.planet];
 
-  </section>
-    </>
+              return (
+                <tr key={planet.planet}>
+                  {details.category == "Terrestrial Planets" && (
+                    <th colSpan={2} rowSpan={4} scope="rowgroup" className="category">
+                      {details?.category}
+                    </th>
+                  )}
+                  {details.category == "Jovian Planets" && (
+                    <th rowSpan={4} colSpan={1} scope="rowgroup" className="category">
+                      {details?.category}
+                    </th>)
+                  }
+                  {details.subcategory == "Gas Giants" && (
+                    <th rowSpan={2} colSpan={1} scope="rowgroup" className="subcategory">
+                      {details?.subcategory}
+                    </th>
+                  )}
+                  {details.subcategory == "Ice Giants" && (
+                    <th rowSpan={2} colSpan={1} scope="rowgroup" className="subcategory">
+                      {details?.subcategory}
+                    </th>
+                  )}
+                  {details.category == "Dwarf Planets" && (
+                    <th rowSpan={2} colSpan={2} scope="rowgroup" className="category">
+                      {details?.category}
+                    </th>
+        
+                  )}
+                  
+                  <td>{planet.planet}</td>
+                  <td>{details?.mass}</td>
+                  <td>{details?.diameter}</td>
+                  <td>{details?.density}</td>
+                  <td>{details?.gravity}</td>
+                  {/* <td>{details?.discovered}</td> */}
+                </tr>
+
+            
+              );
+            })}
+          </tbody>
+
+        </table>
+
+      </section>
+    </div>
   );
 };
 
