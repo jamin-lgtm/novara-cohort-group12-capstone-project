@@ -1,8 +1,4 @@
 import "./Footer.css";
-<<<<<<< HEAD
-
-=======
->>>>>>> 276f45fd66f1586e8d2b976b41aba897568a4475
 
 function Footer() {
   return (
