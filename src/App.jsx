@@ -1,7 +1,8 @@
 import Hero from './components/Hero'
 
-import Footer from "./components/Footer";
+import TableContact from "./components/TableContact";
 
+import Footer from "./components/Footer";
 
 function App() {
   
@@ -9,9 +10,12 @@ function App() {
   return (
     <>
       <Hero />
-     <div>
-      <Footer />
-    </div>
+      <div>
+        <TableContact />
+      </div>
+      <div>
+       <Footer />
+      </div>
     </>
   )
 }
