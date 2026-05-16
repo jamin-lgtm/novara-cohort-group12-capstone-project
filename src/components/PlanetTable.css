@@ -1,0 +1,65 @@
+/* ===============================
+   Planet Table Section (WHITE UI)
+================================ */
+
+.planet-table-section {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* Title */
+.planet-table-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+/* Subtitle */
+.planet-table-subtitle {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 1.8rem;
+}
+
+/* Table */
+.planet-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Header */
+.planet-table th {
+  background: #f3f4f6;
+  color: #374151;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.9rem 1.2rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Cells */
+.planet-table td {
+  padding: 0.9rem 1.2rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Hover effect */
+.planet-table tbody tr:hover {
+  background: #f9fafb;
+  transition: 0.2s ease;
+}
+
+/* Category column */
+.category {
+  font-weight: 600;
+  color: #111827;
+}
