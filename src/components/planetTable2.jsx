@@ -1,6 +1,6 @@
 import "./PlanetTable2.css";
 
-function PlanetTable() {
+function PlanetTable2() {
   return (
     <div className="table-wrapper">
       <table>
@@ -24,15 +24,10 @@ function PlanetTable() {
 
         <tbody>
           <tr className="row-white">
-            <th
-              rowSpan="4"
-              colSpan="2"
-              scope="rowgroup"
-              className="terrestrial"
-            >
+            <th rowSpan="4" colSpan="2" className="terrestrial">
               Terrestrial Planets
             </th>
-            <th scope="row">Mercury</th>
+            <th>Mercury</th>
             <td>0.330</td>
             <td>4,879</td>
             <td>5427</td>
@@ -40,7 +35,7 @@ function PlanetTable() {
           </tr>
 
           <tr className="row-light">
-            <th scope="row">Venus</th>
+            <th>Venus</th>
             <td>4.87</td>
             <td>12,104</td>
             <td>5243</td>
@@ -48,7 +43,7 @@ function PlanetTable() {
           </tr>
 
           <tr className="row-white">
-            <th scope="row">Earth</th>
+            <th>Earth</th>
             <td>5.97</td>
             <td>12,756</td>
             <td>5514</td>
@@ -56,7 +51,7 @@ function PlanetTable() {
           </tr>
 
           <tr className="row-light">
-            <th scope="row">Mars</th>
+            <th>Mars</th>
             <td>0.642</td>
             <td>6,792</td>
             <td>3933</td>
@@ -64,13 +59,13 @@ function PlanetTable() {
           </tr>
 
           <tr className="row-white">
-            <th rowSpan="4" scope="rowgroup" className="jovian">
+            <th rowSpan="4" className="jovian">
               Jovian Planets
             </th>
-            <th rowSpan="2" scope="rowgroup" className="gas">
+            <th rowSpan="2" className="gas">
               Gas Giants
             </th>
-            <th scope="row">Jupiter</th>
+            <th>Jupiter</th>
             <td>1898</td>
             <td>142,984</td>
             <td>1326</td>
@@ -78,7 +73,7 @@ function PlanetTable() {
           </tr>
 
           <tr className="row-light">
-            <th scope="row">Saturn</th>
+            <th>Saturn</th>
             <td>568</td>
             <td>120,536</td>
             <td>687</td>
@@ -86,10 +81,10 @@ function PlanetTable() {
           </tr>
 
           <tr className="row-white">
-            <th rowSpan="2" scope="rowgroup" className="ice">
+            <th rowSpan="2" className="ice">
               Ice Giants
             </th>
-            <th scope="row">Uranus</th>
+            <th>Uranus</th>
             <td>86.8</td>
             <td>51,118</td>
             <td>1271</td>
@@ -97,7 +92,7 @@ function PlanetTable() {
           </tr>
 
           <tr className="row-light">
-            <th scope="row">Neptune</th>
+            <th>Neptune</th>
             <td>102</td>
             <td>49,528</td>
             <td>1638</td>
@@ -105,15 +100,10 @@ function PlanetTable() {
           </tr>
 
           <tr className="row-white">
-            <th
-              rowSpan="1"
-              colSpan="2"
-              scope="rowgroup"
-              className="dwarf"
-            >
+            <th colSpan="2" className="dwarf">
               Dwarf Planets
             </th>
-            <th scope="row">Pluto</th>
+            <th>Pluto</th>
             <td>0.0146</td>
             <td>2,370</td>
             <td>2095</td>
@@ -125,4 +115,4 @@ function PlanetTable() {
   );
 }
 
-export default PlanetTable;
+export default PlanetTable2;
