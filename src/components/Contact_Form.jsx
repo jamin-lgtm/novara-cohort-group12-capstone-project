@@ -198,7 +198,7 @@ const handleSubmit = async (e) => {
           </div>
 
           {/* Row 3 - Age and Interestlevel */}
-          <div className="contact__row">
+          {/* <div className="contact__row">
            <div className="contact__field">
               <label htmlFor="age">Age*</label>
               <input
@@ -211,9 +211,9 @@ const handleSubmit = async (e) => {
               {errors.age && (
                 <span className="contact__error">{errors.age}</span>
               )}
-            </div> 
+            </div>  */}
 
-            <div className="contact__field">
+            {/* <div className="contact__field">
               <label htmlFor="interestLevel">Interest Level*</label>
               <select
                   id="interestLevel"
@@ -229,13 +229,13 @@ const handleSubmit = async (e) => {
                 {errors.interestLevel && (
                   <span className="contact__error">{errors.interestLevel}</span>
               )}
-            </div>
-      </div>
+            </div> */}
+      {/* </div> */}
 
           {/* Row 4 - Message and Occupation*/}
-          <div className="contact__row">
+          <div className="contact__row contact__row--message-panel">
 
-             <div className="contact__field">
+             {/* <div className="contact__field">
              <label htmlFor="occupation">Occupation*</label>
               <input
                 id="occupation"
@@ -247,75 +247,83 @@ const handleSubmit = async (e) => {
               {errors.occupation && (
                 <span className="contact__error">{errors.occupation}</span>
               )}
-            </div>
+            </div> */}
 
-            <div className="contact__field">
-              <label htmlFor="message">Message*</label>
-              <textarea
-                id="message"
-                placeholder="Enter your message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                maxLength={100}
-              />
-              <span className="contact__charcount">
-                {message.length}/100 characters
-              </span>
-              {errors.message && (
-                <span className="contact__error">{errors.message}</span>
-              )}
-            </div>
+            
+              <div className="contact__field contact__message-field">
+                <label htmlFor="message">Message*</label>
+                <textarea
+                  id="message"
+                  placeholder="Enter your message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  maxLength={100}
+                  rows={10}
+                  columns={40}
+                  required
+                />
+                <span className="contact__charcount">
+                  {message.length}/100 characters
+                </span>
+                {errors.message && (
+                  <span className="contact__error">{errors.message}</span>
+                )}
+              </div>
+
+              {/* Row 5 - Radio and Checkbox */}
+              <div className="contact__field contact__field_radio_checkbox" id="contactMethod">
+                <p className="contact__group-label">
+                  What is the best way to contact you?
+                </p>
+                <div className="contact__options">
+                  {["Phone", "Email", "Both"].map((option) => (
+                    <label key={option} className="contact__option">
+                      <input
+                        type="radio"
+                        name="contactMethod"
+                        value={option.toLowerCase()}
+                        checked={contactMethod === option.toLowerCase()}
+                        onChange={(e) => setContactMethod(e.target.value)}
+                      />
+                      {option}
+                    </label>
+                  ))}
+                </div>
+                {errors.contactMethod && (
+                  <span className="contact__error">{errors.contactMethod}</span>
+                )}
+
+                <div className="contact__divider" />
+                <p className="contact__group-label">
+                  How did you discover us?
+                </p>
+                <div className="contact__options">
+                  {[
+                    { label: "Friend", key: "friend" },
+                    { label: "TS Academy", key: "tsAcademy" },
+                    { label: "Others", key: "others" },
+                  ].map((item) => (
+                    <label key={item.key} className="contact__option">
+                      <input
+                        type="checkbox"
+                        checked={hearAboutUs[item.key]}
+                        onChange={() =>
+                          setHearAboutUs((prev) => ({
+                            ...prev,
+                            [item.key]: !prev[item.key],
+                          }))
+                        }
+                      />
+                      {item.label}
+                    </label>
+                  ))}
+                </div>
+              </div>
+              
+  
 
           </div>
-          {/* Row 5 - Radio and Checkbox */}
-            <div className="contact__field">
-              <p className="contact__group-label">
-                What is the best way to contact you?
-              </p>
-              <div className="contact__options">
-                {["Phone", "Email", "Both"].map((option) => (
-                  <label key={option} className="contact__option">
-                    <input
-                      type="radio"
-                      name="contactMethod"
-                      value={option.toLowerCase()}
-                      checked={contactMethod === option.toLowerCase()}
-                      onChange={(e) => setContactMethod(e.target.value)}
-                    />
-                    {option}
-                  </label>
-                ))}
-              </div>
-              {errors.contactMethod && (
-                <span className="contact__error">{errors.contactMethod}</span>
-              )}
-
-              <div className="contact__divider" />
-              <p className="contact__group-label">
-                How did you discover us?
-              </p>
-              <div className="contact__options">
-                {[
-                  { label: "Friend", key: "friend" },
-                  { label: "TS Academy", key: "tsAcademy" },
-                  { label: "Others", key: "others" },
-                ].map((item) => (
-                  <label key={item.key} className="contact__option">
-                    <input
-                      type="checkbox"
-                      checked={hearAboutUs[item.key]}
-                      onChange={() =>
-                        setHearAboutUs((prev) => ({
-                          ...prev,
-                          [item.key]: !prev[item.key],
-                        }))
-                      }
-                    />
-                    {item.label}
-                  </label>
-                ))}
-              </div>
-            </div>
+          
 
           {/* Submit Button */}
           <button type="submit" className="contact__btn">
