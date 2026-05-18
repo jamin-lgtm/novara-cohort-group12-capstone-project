@@ -1,0 +1,189 @@
+/* CONTACT SECTION */
+.contact-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+    /* Background changed from blue to white */
+  background-color: #ffffff;
+}
+
+/* HEADING AND DESCRIPTION */
+.contact-title {
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 20px;
+  font-size: 32px;
+  color: #164baf;
+  text-align: left;
+}
+
+.contact-description {
+  max-width: 1000px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  color: #0f2a44;
+  text-align: left;
+}
+
+/* FORM CONTAINER */
+.contact-container {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.contact-form {
+  width: 100%;
+}
+
+/* ROW LAYOUT */
+.form-row,
+.content-row {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.content-row {
+  gap: 50px;
+  align-items: flex-start;
+}
+
+/* FORM GROUPS */
+.form-group,
+.message-section,
+.preferences-section {
+  flex: 1;
+}
+
+/* LABELS */
+.form-group label,
+.message-section label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #0f2a44;
+}
+
+.required {
+  color: #e60000;
+}
+
+/* INPUTS, SELECTS, TEXTAREA */
+.form-group input,
+.form-group select,
+.message-section textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-family: inherit;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.message-section textarea {
+  resize: vertical;
+}
+
+/* CHARACTER COUNT */
+.character-count {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #666666;
+}
+
+/* SUBMIT BUTTON */
+.submit-button {
+  margin-top: 15px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 4px;
+  background-color: #164baf;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #103a87;
+}
+
+/* OPTIONS SECTION */
+
+.preferences-section{
+  margin-top: 35px;
+}
+.option-group {
+  margin-bottom: 30px;
+}
+
+.option-group h4 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #0f2a44;
+}
+
+.option-group label {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  color: #0f2a44;
+  cursor: pointer;
+}
+
+/* RADIO AND CHECKBOX INPUTS */
+.option-group input[type="radio"],
+.option-group input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #000000;
+}
+
+/* CUSTOM CHECKBOX */
+.option-group input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #000000;
+  border-radius: 2px;
+  background-color: #ffffff;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.option-group input[type="checkbox"]:checked::after {
+  content: "✓";
+  position: absolute;
+  top: -2px;
+  left: 2px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .form-row,
+  .content-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-section {
+    padding: 20px;
+  }
+
+  .contact-title {
+    font-size: 26px;
+  }
+
+  .submit-button {
+    width: 100%;
+  }
+}
