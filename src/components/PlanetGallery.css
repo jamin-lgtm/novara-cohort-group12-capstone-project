@@ -21,9 +21,15 @@
 
 .planet-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* mobile: 2 cards */
   gap: 30px;
-  justify-content: center;
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+  .planet-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .planet-card {
