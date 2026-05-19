@@ -211,7 +211,7 @@
 .cf-charcount {
   font-size: 0.62rem;
   color: #475569;
-  text-align: right;
+  text-align: left;
   letter-spacing: 0.05em;
   margin: 0;
 }
@@ -221,7 +221,7 @@
   align-self: flex-start;
   position: relative;
   background: #164BAF;
-  color: #000000;
+  color: white;
   border: none;
   border-radius: 10px;
   padding: 0.9rem 2.75rem;
