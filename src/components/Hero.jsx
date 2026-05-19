@@ -1,5 +1,6 @@
 import './Hero.css';
 import heroImage from '../assets/images/earth-image.png';
+import planetIcon from '../assets/images/planeticon.png';
 
 function Hero(){
     const scrollToGallery = ()=>{
@@ -8,7 +9,7 @@ function Hero(){
     };
 
     const scrolltoContact = ()=>{
-        document.getElementById('contact').scrollIntoView({behavior: 'smooth'});
+        document.getElementById('contact-form').scrollIntoView({behavior: 'smooth'});
     };
 
     return (
@@ -18,7 +19,7 @@ function Hero(){
                 {/* Brand / Logo    */}
                 <div className="brand">
                     <img
-                        src="https://lh3.googleusercontent.com/d/1Hrt1dioHTiy9iqMx9-SbQL6WfeW6zP1Y"
+                        src={planetIcon}
                         alt="The earth icon"
                         className="logo-icon"
                     />

@@ -1,31 +1,36 @@
 /* =======================================
-   TableContact.css
-   Assigned: Samuel .O (Developer)
+   ContactForm.css
    ======================================= */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-/* ── Reset & Section ── */
-* {
-  box-sizing: border-box;
+/* ── Section (space background lives here) ── */
+.contact-section {
+  position: relative;       /* canvas anchors to this */
+  overflow: hidden;         /* clips the canvas */
+  background: linear-gradient(180deg, #080d16 0%, #0d1f3c 40%, #0a1628 100%);
+  padding: 4rem 1rem;
+  border-top: 1px solid rgba(56, 189, 248, 0.08);
 }
 
-.contact {
+/* ── White card (sits above the canvas) ── */
+.contact-card {
+  position: relative;
+  z-index: 1;               /* above z-index: 0 canvas */
   width: 100%;
   max-width: 900px;
-  margin: 5rem auto;
+  margin: 0 auto;
   padding: 3.5rem;
-  position: relative;
   background: white;
   border: 1px solid rgba(56, 189, 248, 0.1);
   border-radius: 20px;
-  font-family: inter, sans-serif;
+  font-family: Inter, sans-serif;
   font-weight: 400;
+  box-sizing: border-box;
 }
 
 /* Top glowing line */
-.contact::before {
+.contact-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -41,36 +46,20 @@
   );
 }
 
-.contact-section {
-  position: relative;
-  background: linear-gradient(
-    180deg,
-    #080d16 0%,
-    #0d1f3c 40%,
-    #0a1628 100%
-  );
-  padding: 4rem 1rem;
-  border-top: 1px solid rgba(56, 189, 248, 0.08);
-}
-
 /* Bottom corner accent */
-.contact::after {
+.contact-card::after {
   content: '';
   position: absolute;
   bottom: 0;
   right: 0;
   width: 200px;
   height: 200px;
-  background: radial-gradient(
-    circle at bottom right,
-    rgba(139, 92, 246, 0.08),
-    transparent 70%
-  );
+  background: radial-gradient(circle at bottom right, rgba(139, 92, 246, 0.08), transparent 70%);
   border-radius: 0 0 20px 0;
   pointer-events: none;
 }
 
-/* ── Header ── */
+/* ── Eyebrow ── */
 .contact__eyebrow {
   font-size: 0.65rem;
   letter-spacing: 0.25em;
@@ -99,8 +88,9 @@
   border-radius: 50%;
 }
 
+/* ── Headings ── */
 .contact__title {
-  font-family: 'Inter', sans-serif;
+  font-family: Inter, sans-serif;
   font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   font-weight: 700;
   color: #0b3db9;
@@ -110,7 +100,7 @@
 }
 
 .contact__subtitle {
-  font-family: 'Inter', sans-serif;
+  font-family: Inter, sans-serif;
   font-size: 0.95rem;
   color: #202122;
   margin-bottom: 3rem;
@@ -119,68 +109,38 @@
   font-weight: 300;
 }
 
-/* ── Form Layout ── */
+/* ── Form wrapper ── */
 .contact__form {
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
 }
 
-.contact__row {
+/* ── Grid rows ── */
+.cf-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
   align-items: start;
-  justify-content: space-between;
-  padding-left: 20px;
 }
 
-.contact__field {
+/* Bottom row (message + preferences) */
+.cf-row--bottom {
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+}
+
+/* ── Field group ── */
+.cf-field {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   min-width: 0;
-  
-}
-
-/* .contact__field_group {
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
-  justify-content: space-between;
-  border: 1px solid rgba(56, 189, 248, 0.08);
-} */
-
-
-.contact__message-field {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  min-width: 0;
-}
-
-.contact__field_radio_checkbox {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  border: 1px solid rgba(148, 163, 184, 0.25);
-  background: #f8fafc;
-  border-radius: 16px;
-  min-width: 0;
-  padding: 1.25rem;
-}
-
-.contact__field_radio_checkbox .contact__group-label {
-  color: #334155;
-}
-
-#contactMethod {
-  border: none;
 }
 
 /* ── Labels ── */
-.contact__field label {
-  font-family: 'Inter', sans-serif;
+.cf-label {
+  font-family: Inter, sans-serif;
   font-size: 0.65rem;
   font-weight: 700;
   color: #000307;
@@ -188,47 +148,41 @@
   text-transform: uppercase;
 }
 
-/* ── Inputs ── */
-.contact__field input,
-.contact__field select,
-.contact__field textarea {
+.cf-required {
+  color: red;
+}
+
+/* ── Inputs, selects, textareas ── */
+.cf-input {
   background: #ffffff;
   border: 1px solid #d1d5db;
   border-radius: 12px;
   padding: 0.95rem 1.1rem;
   color: #0f172a;
-  font-family: 'Inter', sans-serif;
+  font-family: Inter, sans-serif;
   font-size: 0.95rem;
   font-weight: 400;
   outline: none;
   transition: all 0.25s ease;
   width: 100%;
+  box-sizing: border-box;
 }
 
-.contact__field input::placeholder,
-.contact__field textarea::placeholder {
+.cf-input::placeholder {
   color: #94a3b8;
-  font-weight: 400;
 }
 
-/* Focus glow effect */
-.contact__field input:focus,
-.contact__field select:focus,
-.contact__field textarea:focus {
+.cf-input:focus {
   border-color: rgba(59, 130, 246, 0.75);
-  background: #ffffff;
-  box-shadow:
-    0 0 0 3px rgba(59, 130, 246, 0.12);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
 }
 
-/* Hover effect */
-.contact__field input:hover,
-.contact__field select:hover,
-.contact__field textarea:hover {
+.cf-input:hover {
   border-color: rgba(148, 163, 184, 0.7);
 }
 
-.contact__field select {
+/* Select arrow */
+.cf-select {
   appearance: none;
   cursor: pointer;
   color: #334155;
@@ -238,284 +192,185 @@
   padding-right: 2.5rem;
 }
 
-.contact__field select option {
-  background:#9ca5bb;
-  color: #e2e8f0;
-}
-
-.contact__field select option:hover {
-  background:red;
-  color: #f1f5f9;
-}
-
-..contact__field textarea {
+/* Textarea */
+.cf-textarea {
   resize: none;
   min-height: 150px;
   line-height: 1.75;
 }
 
-.contact__options {
+/* ── Message column ── */
+.cf-message-col {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 0.75rem;
-  margin-bottom: 0.35rem;
-}
-
-.contact__option {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
-  color: #0f172a;
-  cursor: pointer;
-  transition: background 0.2s, border-color 0.2s, color 0.2s;
-  padding: 0.65rem 0.95rem;
-  border: 1px solid #d1d5db;
-  border-radius: 999px;
-  background: #ffffff;
-}
-
-.contact__option:hover {
-  color: #111827;
-  border-color: #93c5fd;
-  background: #f8fbff;
-}
-
-.contact__option input[type="radio"],
-.contact__option input[type="checkbox"] {
-  accent-color: #2563eb;
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
-  flex-shrink: 0;
+  min-width: 0;
 }
 
 /* ── Character count ── */
-.contact__charcount {
-  font-family: 'Space Mono', monospace;
+.cf-charcount {
   font-size: 0.62rem;
   color: #475569;
   text-align: right;
   letter-spacing: 0.05em;
-}
-
-/* ── Error messages ── */
-.contact__error {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
-  color: #f87171;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.contact__error::before {
-  content: '!';
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 14px;
-  height: 14px;
-  background: rgba(248, 113, 113, 0.15);
-  border-radius: 50%;
-  font-size: 0.6rem;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
-/* ── Separator between rows ── */
-.contact__separator {
-  height: 1px;
-  background: rgba(255, 255, 255, 0.04);
-}
-
-/* ── Radio & Checkbox side panel ── */
-.contact__row--message-panel {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  align-items: start;
-}
-
-.contact__row--message-panel .contact__field_radio_checkbox {
-  padding-left: 0;
-  border-left: none;
-  justify-content: flex-start;
-  gap: 1.25rem;
-}
-
-.contact__group-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: #334155;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin-bottom: 0.75rem;
-  margin-top: 0;
-}
-
-.contact__group-label:first-child {
-  margin-top: 0;
-}
-
-.contact__options {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  margin-bottom: 0.5rem;
-}
-
-.contact__option {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
-  color: #cbd5e1;
-  cursor: pointer;
-  transition: color 0.2s;
-  padding: 0.35rem 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 6px;
-  background: #06b3b9;
-}
-
-.contact__option:hover {
-  color: #f1f5f9;
-  border-color: rgba(56, 189, 248, 0.3);
-  background: #0f2033;
-}
-
-.contact__option input[type="radio"],
-.contact__option input[type="checkbox"] {
-  accent-color: #38bdf8;
-  width: 14px;
-  height: 14px;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-/* ── Divider ── */
-.contact__divider {
-  height: 1px;
-  background: rgba(255, 255, 255, 0.04);
-  margin: 0.75rem 0;
+  margin: 0;
 }
 
 /* ── Submit button ── */
-.contact__btn {
+.cf-btn {
   align-self: flex-start;
   position: relative;
-  background: linear-gradient(135deg, #0ea5e9, #6366f1);
-  background-color: #0ea5e9;
+  background: #164BAF;
   color: #000000;
   border: none;
   border-radius: 10px;
   padding: 0.9rem 2.75rem;
-  font-family: 'Inter', sans-serif;
+  font-family: Inter, sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
   letter-spacing: 0.04em;
-  transition: transform 0.15s, box-shadow 0.25s, opacity 0.2s;
+  margin-top: 0.75rem;
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 0.75rem;
   overflow: hidden;
+  transition: transform 0.15s, box-shadow 0.25s, opacity 0.2s;
 }
 
-/* Button shimmer effect */
-.contact__btn::before {
+.cf-btn::before {
   content: '';
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.15),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
   transition: left 0.4s ease;
 }
 
-.contact__btn:hover::before {
+.cf-btn:hover::before {
   left: 100%;
 }
 
-.contact__btn:hover {
+.cf-btn:hover {
   transform: translateY(-2px);
-  box-shadow:
-    0 8px 24px rgba(14, 165, 233, 0.3),
-    0 4px 12px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.3), 0 4px 12px rgba(99, 102, 241, 0.2);
 }
 
-.contact__btn:active {
+.cf-btn:active {
   transform: translateY(0);
   opacity: 0.9;
 }
 
-/* ── Success message ── */
-.contact__success {
-  text-align: center;
-  padding: 4rem 2rem;
-  font-family: 'Inter', sans-serif;
-  font-size: 1.1rem;
-  color: #4ade80;
-  border: 1px solid rgba(74, 222, 128, 0.15);
+/* ── Preferences panel ── */
+.cf-preferences {
   border-radius: 16px;
-  background: #0a1f12;
-  line-height: 1.8;
-}
-
-.contact__success::before {
-  content: '✓';
+  padding: 1.25rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  background: rgba(74, 222, 128, 0.1);
-  border: 1px solid rgba(74, 222, 128, 0.2);
-  border-radius: 50%;
-  font-size: 1.3rem;
-  margin: 0 auto 1.5rem;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+  margin-top: 15px;
 }
 
-/* ── Browser autofill fix ── */
-.contact__field input:-webkit-autofill,
-.contact__field input:-webkit-autofill:hover,
-.contact__field input:-webkit-autofill:focus,
-.contact__field input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 1000px #0d1424 inset !important;
-  -webkit-text-fill-color: #e2e8f0 !important;
-  caret-color: #e2e8f0;
+.cf-option-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.cf-group-label {
+  font-family: Inter, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #334155;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem 0;
+}
+
+.cf-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.cf-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: Inter, sans-serif;
+  font-size: 0.9rem;
+  color: #0f172a;
+  cursor: pointer;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  background: #ffffff;
+  transition: border-color 0.2s, background 0.2s;
+  user-select: none;
+}
+
+.cf-option:hover {
+  border-color: #93c5fd;
+  background: #f8fbff;
+}
+
+.cf-option input[type="radio"],
+.cf-option input[type="checkbox"] {
+  accent-color: #2563eb;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ── Divider inside preferences ── */
+.cf-divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.07);
+  margin: 0.75rem 0;
+}
+
+/* ── Autofill fix ── */
+.cf-input:-webkit-autofill,
+.cf-input:-webkit-autofill:hover,
+.cf-input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #0f172a !important;
 }
 
 /* ── Responsive ── */
 @media (max-width: 680px) {
-  .contact {
+  .contact-card {
     padding: 2rem 1.5rem;
-    margin: 2rem 1rem;
     border-radius: 16px;
   }
 
-  .contact__row {
+  /* All rows collapse to single column */
+  .cf-row,
+  .cf-row--bottom {
     grid-template-columns: 1fr;
   }
 
-  .contact__row .contact__field:last-child {
-    padding-left: 0;
-    border-left: none;
-    border-top: 1px solid rgba(56, 189, 248, 0.08);
-    padding-top: 1.5rem;
+  /* Hide preferences panel on small screens */
+  .cf-preferences {
+    display: none;
   }
 
-  .contact__btn {
+  .cf-btn {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .contact-section {
+    padding: 2rem 0.5rem;
   }
 }
