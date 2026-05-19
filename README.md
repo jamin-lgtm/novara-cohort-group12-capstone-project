@@ -104,9 +104,9 @@ src/
 
 ## Team Members
 
-- Team Lead: Your Name (https://github.com/yourusername)
-- Assistant Team Lead: Member Name
-- Developer: Member Name
+- Team Lead: Your Name FELIX Aniebiet Benjamin (https://github.com/jamin-lgtm/novara-cohort-group12-capstone-project)
+- Assistant Team Lead: Samuel David
+- Developer: Luciana Okorie, Mary Nwandiogo,Johnson Ibiye Catherine,
 
 ---
 
