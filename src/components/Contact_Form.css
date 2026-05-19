@@ -183,13 +183,13 @@
 
 /* Select arrow */
 .cf-select {
-  appearance: none;
+  appearance: none; /* remove native browser dropdown styling so our custom arrow shows */
   cursor: pointer;
   color: #334155;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1rem center;
-  padding-right: 2.5rem;
+  padding-right: 2.5rem; /* leave space for the custom arrow icon */
 }
 
 /* Textarea */
@@ -216,10 +216,30 @@
   margin: 0;
 }
 
+.cf-status-message {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-top: 0.75rem;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  background: rgba(56, 189, 248, 0.08);
+  color: #0b3db9;
+}
+
+.cf-status-message--error {
+  background: rgba(248, 113, 113, 0.12);
+  color: #b91c1c;
+}
+
+.cf-status-message--success {
+  background: rgba(74, 222, 128, 0.12);
+  color: #166534;
+}
+
 /* ── Submit button ── */
 .cf-btn {
-  align-self: flex-start;
-  position: relative;
+  align-self: flex-start; /* keep button left-aligned inside the message column */
+  position: relative; /* allows the animated pseudo-element to position correctly */
   background: #164BAF;
   color: #000000;
   border: none;
@@ -234,7 +254,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  overflow: hidden;
+  overflow: hidden; /* clip the shimmer overlay */
   transition: transform 0.15s, box-shadow 0.25s, opacity 0.2s;
 }
 
@@ -258,6 +278,12 @@
   box-shadow: 0 8px 24px rgba(14, 165, 233, 0.3), 0 4px 12px rgba(99, 102, 241, 0.2);
 }
 
+.cf-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
 .cf-btn:active {
   transform: translateY(0);
   opacity: 0.9;
@@ -271,7 +297,7 @@
   flex-direction: column;
   gap: 0;
   min-width: 0;
-  margin-top: 15px;
+  margin-top: 15px; /* separate the preferences panel from the message block */
 }
 
 .cf-option-group {
@@ -319,11 +345,11 @@
 
 .cf-option input[type="radio"],
 .cf-option input[type="checkbox"] {
-  accent-color: #2563eb;
+  accent-color: #2563eb; /* custom accent color for both radios and checkboxes */
   width: 14px;
   height: 14px;
   cursor: pointer;
-  flex-shrink: 0;
+  flex-shrink: 0; /* prevent inputs from shrinking inside the inline-flex label */
 }
 
 /* ── Divider inside preferences ── */
