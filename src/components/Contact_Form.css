@@ -64,7 +64,7 @@
   font-size: 0.65rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: #38bdf8;
+  color: #0b3db9;
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
@@ -76,7 +76,7 @@
   display: inline-block;
   width: 28px;
   height: 1px;
-  background: #38bdf8;
+  background: #0b3db9;
 }
 
 .contact__eyebrow::after {
@@ -84,7 +84,7 @@
   display: inline-block;
   width: 6px;
   height: 6px;
-  background: #38bdf8;
+  background: #0b3db9;
   border-radius: 50%;
 }
 
