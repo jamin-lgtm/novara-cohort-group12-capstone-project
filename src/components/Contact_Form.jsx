@@ -1,55 +1,46 @@
-import "./ContactForm.css";
+import React, { useState } from "react";
+import "./Contact_Form.css";
+import SpaceBackground from "./SpaceBackground";
 
 function ContactForm() {
+  const [charCount, setCharCount] = useState(100);
+
+  const handleMessageChange = (e) => {
+    setCharCount(100 - e.target.value.length);
+  };
+
   return (
-    <section className="contact-section" id="contact-form">
-      <h2 className="contact-title">
-        Have Questions About Planetary Science?
-      </h2>
+    <section id="contact-form" className="contact-section">
+      <SpaceBackground />
 
-      <p className="contact-description">
-        Interested in learning more about space, astronomy, or how planetary
-        data is collected and analyzed? Reach out and we'll get back to you.
-      </p>
+      <div className="contact-card">
+        <p className="contact__eyebrow">Contact Us</p>
 
-      <div className="contact-container">
-        <form className="contact-form" action="#" method="post">
-          {/* Full Name and Email */}
-          <div className="form-row">
-            <div className="form-group">
-              <label htmlFor="fullname">
-                Full Name <span className="required">*</span>
-              </label>
-              <input
-                type="text"
-                id="fullname"
-                name="fullname"
-                placeholder="Full name"
-                required
-              />
-            </div>
+        <h2 className="contact__title">
+          Have Questions About Planetary Science?
+        </h2>
 
-            <div className="form-group">
-              <label htmlFor="email">
-                Email <span className="required">*</span>
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="example@example.com"
-                required
-              />
-            </div>
+        <p className="contact__subtitle">
+          Interested in learning more about space, astronomy, or how planetary
+          data is collected and analyzed? Reach out and we'll get back to you.
+        </p>
+
+        <div className="contact__form">
+
+          {/* Row 1: Full Name + Email */}
+          <div className="cf-row">
+            <FieldGroup label="Full Name" required>
+              <input type="text" placeholder="Full name" className="cf-input" />
+            </FieldGroup>
+            <FieldGroup label="Email" required>
+              <input type="email" placeholder="example@example.com" className="cf-input" />
+            </FieldGroup>
           </div>
 
-          {/* City and Phone Number */}
-          <div className="form-row">
-            <div className="form-group">
-              <label htmlFor="city">
-                City <span className="required">*</span>
-              </label>
-              <select id="city" name="city" required>
+          {/* Row 2: City + Phone */}
+          <div className="cf-row">
+            <FieldGroup label="City" required>
+              <select className="cf-input cf-select">
                 <option value="">Choose city</option>
                 <option>Victoria Island</option>
                 <option>Lekki</option>
@@ -62,116 +53,77 @@ function ContactForm() {
                 <option>Epe</option>
                 <option>Gbagada</option>
               </select>
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="phone">
-                Phone Number <span className="required">*</span>
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="Please enter a valid phone number"
-                required
-              />
-            </div>
+            </FieldGroup>
+            <FieldGroup label="Phone Number" required>
+              <input type="tel" placeholder="Please enter a valid phone number" className="cf-input" />
+            </FieldGroup>
           </div>
 
-          {/* Message and Preferences */}
-          <div className="content-row">
-            {/* Message Section */}
-            <div className="message-section">
-              <label htmlFor="message">
-                Message <span className="required">*</span>
+          {/* Row 3: Message + Preferences */}
+          <div className="cf-row cf-row--bottom">
+            <div className="cf-message-col">
+              <label className="cf-label">
+                Message <span className="cf-required">*</span>
               </label>
-
               <textarea
-                id="message"
-                name="message"
-                rows="10"
+                className="cf-input cf-textarea"
+                rows={10}
                 placeholder="Enter your message"
-                maxLength="100"
-                required
-              ></textarea>
-
-              <p className="character-count">100 characters</p>
-
-              <button className="submit-button" type="submit">
-                Submit &gt;
+                maxLength={100}
+                onChange={handleMessageChange}
+              />
+              <p className="cf-charcount">{charCount} characters</p>
+              <button className="cf-btn" type="button">
+                Submit &rsaquo;
               </button>
             </div>
 
-            {/* Contact Preferences */}
-            <div className="preferences-section">
-              <div className="option-group">
-                <h4>How should we contact you?</h4>
-
-                <label>
-                  <input
-                    type="radio"
-                    name="contact-method"
-                    value="phone"
-                    required
-                  />
-                  Phone
-                </label>
-
-                <label>
-                  <input
-                    type="radio"
-                    name="contact-method"
-                    value="email"
-                  />
-                  Email
-                </label>
-
-                <label>
-                  <input
-                    type="radio"
-                    name="contact-method"
-                    value="both"
-                  />
-                  Both
-                </label>
+            {/* Preferences panel — hidden on mobile via CSS */}
+            <div className="cf-preferences">
+              <div className="cf-option-group">
+                <p className="cf-group-label">How should we contact you?</p>
+                <div className="cf-options">
+                  {["Phone", "Email", "Both"].map((opt) => (
+                    <label key={opt} className="cf-option">
+                      <input type="radio" name="contact-method" value={opt.toLowerCase()} />
+                      {opt}
+                    </label>
+                  ))}
+                </div>
               </div>
 
-              <div className="option-group">
-                <h4>How did you hear about us?</h4>
+              <div className="cf-divider" />
 
-                <label>
-                  <input
-                    type="checkbox"
-                    name="source"
-                    value="friend"
-                    defaultChecked
-                  />
-                  Friend
-                </label>
-
-                <label>
-                  <input
-                    type="checkbox"
-                    name="source"
-                    value="ts-academy"
-                  />
-                  TS Academy
-                </label>
-
-                <label>
-                  <input
-                    type="checkbox"
-                    name="source"
-                    value="others"
-                  />
-                  Others
-                </label>
+              <div className="cf-option-group">
+                <p className="cf-group-label">How did you hear about us?</p>
+                <div className="cf-options">
+                  {[["friend", "Friend", true], ["ts-academy", "TS Academy", false], ["others", "Others", false]].map(
+                    ([val, label, checked]) => (
+                      <label key={val} className="cf-option">
+                        <input type="checkbox" name="source" value={val} defaultChecked={checked} />
+                        {label}
+                      </label>
+                    )
+                  )}
+                </div>
               </div>
             </div>
           </div>
-        </form>
+
+        </div>
       </div>
     </section>
+  );
+}
+
+function FieldGroup({ label, required, children }) {
+  return (
+    <div className="cf-field">
+      <label className="cf-label">
+        {label} {required && <span className="cf-required">*</span>}
+      </label>
+      {children}
+    </div>
   );
 }
 

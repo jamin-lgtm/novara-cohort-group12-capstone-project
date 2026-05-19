@@ -1,0 +1,376 @@
+/* =======================================
+   ContactForm.css
+   ======================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+/* ── Section (space background lives here) ── */
+.contact-section {
+  position: relative;       /* canvas anchors to this */
+  overflow: hidden;         /* clips the canvas */
+  background: linear-gradient(180deg, #080d16 0%, #0d1f3c 40%, #0a1628 100%);
+  padding: 4rem 1rem;
+  border-top: 1px solid rgba(56, 189, 248, 0.08);
+}
+
+/* ── White card (sits above the canvas) ── */
+.contact-card {
+  position: relative;
+  z-index: 1;               /* above z-index: 0 canvas */
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3.5rem;
+  background: white;
+  border: 1px solid rgba(56, 189, 248, 0.1);
+  border-radius: 20px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+/* Top glowing line */
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(56, 189, 248, 0.6),
+    rgba(139, 92, 246, 0.6),
+    transparent
+  );
+}
+
+/* Bottom corner accent */
+.contact-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle at bottom right, rgba(139, 92, 246, 0.08), transparent 70%);
+  border-radius: 0 0 20px 0;
+  pointer-events: none;
+}
+
+/* ── Eyebrow ── */
+.contact__eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #38bdf8;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact__eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: #38bdf8;
+}
+
+.contact__eyebrow::after {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #38bdf8;
+  border-radius: 50%;
+}
+
+/* ── Headings ── */
+.contact__title {
+  font-family: Inter, sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: #0b3db9;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.contact__subtitle {
+  font-family: Inter, sans-serif;
+  font-size: 0.95rem;
+  color: #202122;
+  margin-bottom: 3rem;
+  max-width: 500px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* ── Form wrapper ── */
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* ── Grid rows ── */
+.cf-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* Bottom row (message + preferences) */
+.cf-row--bottom {
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+}
+
+/* ── Field group ── */
+.cf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+/* ── Labels ── */
+.cf-label {
+  font-family: Inter, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #000307;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.cf-required {
+  color: red;
+}
+
+/* ── Inputs, selects, textareas ── */
+.cf-input {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 0.95rem 1.1rem;
+  color: #0f172a;
+  font-family: Inter, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  outline: none;
+  transition: all 0.25s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cf-input::placeholder {
+  color: #94a3b8;
+}
+
+.cf-input:focus {
+  border-color: rgba(59, 130, 246, 0.75);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+.cf-input:hover {
+  border-color: rgba(148, 163, 184, 0.7);
+}
+
+/* Select arrow */
+.cf-select {
+  appearance: none;
+  cursor: pointer;
+  color: #334155;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+/* Textarea */
+.cf-textarea {
+  resize: none;
+  min-height: 150px;
+  line-height: 1.75;
+}
+
+/* ── Message column ── */
+.cf-message-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+/* ── Character count ── */
+.cf-charcount {
+  font-size: 0.62rem;
+  color: #475569;
+  text-align: right;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* ── Submit button ── */
+.cf-btn {
+  align-self: flex-start;
+  position: relative;
+  background: #164BAF;
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  padding: 0.9rem 2.75rem;
+  font-family: Inter, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  transition: transform 0.15s, box-shadow 0.25s, opacity 0.2s;
+}
+
+.cf-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: left 0.4s ease;
+}
+
+.cf-btn:hover::before {
+  left: 100%;
+}
+
+.cf-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.3), 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.cf-btn:active {
+  transform: translateY(0);
+  opacity: 0.9;
+}
+
+/* ── Preferences panel ── */
+.cf-preferences {
+  border-radius: 16px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+  margin-top: 15px;
+}
+
+.cf-option-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.cf-group-label {
+  font-family: Inter, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #334155;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem 0;
+}
+
+.cf-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.cf-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: Inter, sans-serif;
+  font-size: 0.9rem;
+  color: #0f172a;
+  cursor: pointer;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  background: #ffffff;
+  transition: border-color 0.2s, background 0.2s;
+  user-select: none;
+}
+
+.cf-option:hover {
+  border-color: #93c5fd;
+  background: #f8fbff;
+}
+
+.cf-option input[type="radio"],
+.cf-option input[type="checkbox"] {
+  accent-color: #2563eb;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ── Divider inside preferences ── */
+.cf-divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.07);
+  margin: 0.75rem 0;
+}
+
+/* ── Autofill fix ── */
+.cf-input:-webkit-autofill,
+.cf-input:-webkit-autofill:hover,
+.cf-input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #0f172a !important;
+}
+
+/* ── Responsive ── */
+@media (max-width: 680px) {
+  .contact-card {
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+  }
+
+  /* All rows collapse to single column */
+  .cf-row,
+  .cf-row--bottom {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hide preferences panel on small screens */
+  .cf-preferences {
+    display: none;
+  }
+
+  .cf-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .contact-section {
+    padding: 2rem 0.5rem;
+  }
+}
