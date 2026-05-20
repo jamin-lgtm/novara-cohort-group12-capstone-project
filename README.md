@@ -15,12 +15,10 @@ The goal of this project is to demonstrate:
 - Responsive design principles
 - Team collaboration using Git and GitHub
 
----
 
 ## Live Demo
 (we will paste our deployed-link-here)
 
----
 
 ## Tech Stack
 - React.js
@@ -30,26 +28,30 @@ The goal of this project is to demonstrate:
 - Fetch API
 - Git & GitHub
 
----
 
 ## Project Structure
 
 src/
 │---assets
-│ │---images
 │---components/
-│ ├── Header.jsx
-│ ├── PlanetTable.jsx
-│ ├── ContactForm.jsx
-│ ├── Footer.jsx
+│ │---Contact_Form.css
+│ │---Contact_Form.jsx
+│ │---Footer.css
+│ │---Footer.jsx
+│ │---Hero.css
+│ │---Hero.jsx
+│ │---InfoVideo.jsx
+│ │---PlanetGallery.css
+│ │---PlanetGallery.jsx
+│ │--- PlanetTable.css
+│ │---PlanetTable.jsx
+│ │---SpaceBackground.css
+│ │---SpaceBackground.jsx
 │
-├── assets/
-├── App.jsx
-└── main.jsx
+│---App.css
+└── App.jsx
 
 
-
----
 
 ## Features
 
@@ -59,14 +61,12 @@ src/
 - Displays planet images using `<figure>` element
 - Shows planetary data in a structured table layout
 
----
 
 ### API Integration
 - Uses Fetch API to retrieve planetary data
 - Dynamically renders data in React components
 - Handles loading and display states
 
----
 
 ### Contact Form
 - Fully functional contact form
@@ -82,14 +82,12 @@ src/
   - Contact preference (radio buttons)
   - Source tracking (checkboxes)
 
----
 
 ### Responsive Design
 - Mobile-friendly layout
 - Uses Flexbox and Media Queries
 - Adjusts layout for different screen sizes
 
----
 
 ## Components Breakdown
 
@@ -100,15 +98,13 @@ src/
 | ContactForm | Handles form input and validation |
 | Footer | Contains team and project information |
 
----
 
 ## Team Members
 
 - Team Lead: Your Name FELIX Aniebiet Benjamin (https://github.com/jamin-lgtm/novara-cohort-group12-capstone-project)
 - Assistant Team Lead: Samuel David
-- Developers: Luciana Okorie, Mary Nwandiogo,Johnson Ibiye Catherine,
+- Developers: Luciana Okorie, Mary Nwandiogo,Johnson Ibiye Catherine,Ubighi O. Samuel,
 
----
 
 ## Git Workflow
 
@@ -118,7 +114,6 @@ src/
 - No self-review or self-merge allowed
 - Only completed features are merged into `main`
 
----
 
 ## Deployment
 
@@ -127,7 +122,6 @@ This project can be deployed using:
 - Netlify
 - Render (for backend if needed)
 
----
 
 ## How to Run Project Locally
 
