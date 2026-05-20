@@ -103,7 +103,7 @@ src/
 
 - Team Lead: Your Name FELIX Aniebiet Benjamin (https://github.com/jamin-lgtm/novara-cohort-group12-capstone-project)
 - Assistant Team Lead: Samuel David
-- Developers: Luciana Okorie, Mary Nwandiogo,Johnson Ibiye Catherine,Ubighi O. Samuel,
+- Developers/Collaborators: Luciana Okorie, Mary Nwandiogo,Johnson Ibiye Catherine,Ubighi O. Samuel, Ayauyia Moses,
 
 
 ## Git Workflow
