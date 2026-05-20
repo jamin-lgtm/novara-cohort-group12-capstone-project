@@ -33,13 +33,13 @@ function Hero(){
                     <div className='hero-text'>
                         <h1>Explore Our Solar System Through Data</h1>
                         <p>
-                            Understanding our solar system isn't just for researchers-based facts
-                            and data are vital for gravity and density. We hope you enjoy
-                            experiencing the beauty and majesty of our solar system and even the universe.
+                            Understanding our solar system isn't just for researchers—facts and data about planets, 
+                            gravity, and density are valuable for everyone. 
+                            We hope you enjoy exploring the beauty and majesty of our solar system, and even the wider universe.
                         </p>
                         <div className='hero-buttons'>
                             <button className="btn btn-primary" onClick={scrollToGallery}>
-                                Explore the Data
+                                Explore The Data
                             </button>
                             <button className="btn btn-secondary" onClick={scrolltoContact}>
                                 Contact Us
