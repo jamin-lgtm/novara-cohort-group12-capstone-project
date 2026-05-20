@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import './Spacebackground.css';
+import './SpaceBackground.css';
 
 // ─── Helpers ───────────────────
 const random = (min, max) => Math.random() * (max - min) + min;
