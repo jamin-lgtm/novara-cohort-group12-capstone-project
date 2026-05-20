@@ -34,7 +34,7 @@ function Hero(){
                         <h1>Explore Our Solar System through Data</h1>
                         <p>
                             Understanding our solar system isn't just for researchers-based facts
-                            and data are vital for gravity and density. We hop you enjoy
+                            and data are vital for gravity and density. We hope you enjoy
                             experiencing the beauty and majesty of our solar system and even the universe.
                         </p>
                         <div className='hero-buttons'>
