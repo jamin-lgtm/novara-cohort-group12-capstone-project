@@ -41,7 +41,7 @@ function ContactForm() {
           <div className="cf-row">
             <FieldGroup label="City" required>
               <select className="cf-input cf-select">
-                <option value="">Choose city</option>
+                <option value="">Choose City</option>
                 <option>Victoria Island</option>
                 <option>Lekki</option>
                 <option>Victoria Garden City</option>
